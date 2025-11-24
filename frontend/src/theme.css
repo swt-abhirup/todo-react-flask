@@ -1,4 +1,13 @@
-/* Default Light Theme */
+
+/* Smooth fade animation on theme change */
+* {
+    transition: background-color 0.35s ease, 
+                color 0.35s ease,
+                border-color 0.35s ease,
+                fill 0.35s ease;
+  }
+  
+  /* Default Light Theme */
 :root {
     --bg-color: #ffffff;
     --text-color: #111111;
@@ -23,3 +32,6 @@
     color: var(--text-color) !important;
   }
   
+  .fade-theme {
+    transition: background-color 0.35s ease, color 0.35s ease;
+  }

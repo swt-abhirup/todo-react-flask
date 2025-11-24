@@ -55,7 +55,7 @@ export default function App() {
   }
 
   return (
-    <div className="container py-5">
+    <div className="container py-5 fade-theme">
       {/* HEADER WITH THEME TOGGLE */}
       <div className="d-flex justify-content-between align-items-center mb-4">
       <h2 className="text-center mb-4">Todo App</h2>
