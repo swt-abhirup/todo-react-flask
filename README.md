@@ -41,24 +41,25 @@ This project is created as part of my Full-Stack development training and portfo
 ## 📁 Project Structure
 
 todo-react-flask/
-│
 ├── backend/
-│ ├── app.py
-│ ├── database.py
-│ ├── models.py
-│ ├── routes/
-│ │ └── todos.py
-│ └── requirements.txt
+│   ├── app.py
+│   ├── database.py
+│   ├── models.py
+│   ├── requirements.txt
+│   └── .env (ignored)
 │
 ├── frontend/
-│ ├── index.html
-│ ├── vite.config.js
-│ ├── package.json
-│ └── src/
-│ ├── App.jsx
-│ ├── main.jsx
-│ └── components/
-│ ├── TodoForm.jsx
-│ └── TodoList.jsx
+│   ├── index.html
+│   ├── vite.config.js
+│   ├── package.json
+│   ├── README.md
+│   └── src/
+│       ├── App.jsx
+│       ├── main.jsx
+│       ├── components/
+│       │   ├── TodoForm.jsx
+│       │   └── TodoList.jsx
+│       └── assets/
 │
-└── README.md
+├── README.md (root)
+└── .gitignore
