@@ -1,0 +1,23 @@
+# Simple Dockerfile for dev + small production usage
+FROM python:3.10-slim
+
+# Create app directory
+WORKDIR /app
+
+# Copy only requirements first for layer caching
+COPY requirements.txt .
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy application source
+COPY . .
+
+# Expose port
+EXPOSE 5000
+
+# Use environment variable to disable debug in production if set
+ENV FLASK_ENV=production
+
+# Run with Gunicorn for better process handling in container
+# The create_app factory returns the Flask app instance.
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:create_app()"]
