@@ -19,9 +19,19 @@ export default function App() {
     localStorage.setItem("theme", theme);
   }, [theme]);
 
-  function toggleTheme() {
-    setTheme(theme === "light" ? "dark" : "light");
-  }
+  // function toggleTheme() {
+  //   setTheme(theme === "light" ? "dark" : "light");
+  // }
+    function toggleTheme() {
+      // Add rotation class
+      const icon = document.querySelector(".theme-toggle-icon");
+      icon.classList.add("rotate");
+    
+      // Remove rotation class after animation ends
+      setTimeout(() => icon.classList.remove("rotate"), 400);
+    
+      setTheme(theme === "light" ? "dark" : "light");
+    }
   
   // load data
   useEffect(() => {
@@ -74,7 +84,35 @@ export default function App() {
           value={task}
           onChange={(e) => setTask(e.target.value)}
         />
-        <button className="btn btn-primary">Add</button>
+        <button
+          className="theme-btn"
+          onClick={toggleTheme}
+          aria-label="Toggle theme"
+        >
+          <span className={`theme-toggle-icon ${theme === "dark" ? "rotate" : ""}`}>
+            {theme === "light" ? (
+              /* Sun Icon */
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="orange">
+                <circle cx="12" cy="12" r="5"></circle>
+                <g stroke="orange" strokeWidth="2">
+                  <line x1="12" y1="1" x2="12" y2="4"></line>
+                  <line x1="12" y1="20" x2="12" y2="23"></line>
+                  <line x1="4" y1="12" x2="1" y2="12"></line>
+                  <line x1="23" y1="12" x2="20" y2="12"></line>
+                  <line x1="5" y1="5" x2="3" y2="3"></line>
+                  <line x1="19" y1="19" x2="21" y2="21"></line>
+                  <line x1="5" y1="19" x2="3" y2="21"></line>
+                  <line x1="19" y1="5" x2="21" y2="3"></line>
+                </g>
+              </svg>
+            ) : (
+              /* Moon Icon */
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="yellow">
+                <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"></path>
+              </svg>
+            )}
+          </span>
+        </button>
       </form>
 
       {/* LOADING */}

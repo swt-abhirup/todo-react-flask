@@ -35,3 +35,27 @@
   .fade-theme {
     transition: background-color 0.35s ease, color 0.35s ease;
   }
+
+
+  .theme-toggle-icon {
+    display: inline-block;
+    transition: transform 0.4s ease;
+  }
+  
+  .theme-toggle-icon.rotate {
+    transform: rotate(360deg);
+  }
+  
+  .theme-btn {
+    border: none;
+    background: transparent;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 6px;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .theme-btn:hover {
+    transform: scale(1.15);
+  }
+  
